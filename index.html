@@ -72,6 +72,22 @@
 .swiper-slide-shadow-left{
     background-image: linear-gradient(to right, rgb(0 0 0 / 0%), rgba(0, 0, 0, 0));
 }
+@media (max-width: 485px) {
+
+    .mySwiper{
+        margin: 50px;
+        min-height: 500px;
+    }
+    .ps-post--detail .ps-post__content {
+     padding: 0px 0; 
+    max-width: 960px;
+    margin: 0 auto;
+}
+    .hidden{
+        display: none !important
+    }
+}
+
     </style>
     <div class="ps-page--blog">
         <div class="ps-post--detail ps-post--parallax">
@@ -87,12 +103,12 @@
                         
                         
                         <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 text-center">
-                            <swiper-container class="mySwiper" navigation="false" shadow="false" autoplay="true" pagination="false" effect="flip" grab-cursor="true">
+                            <swiper-container class="hidden mySwiper text-center " id="first_flip" navigation="false" shadow="false" autoplay="true" pagination="false" effect="flip" grab-cursor="true">
                                 <swiper-slide>
-                                  <img src="./img/1.png" />
+                                  <img src="./img/1.png" class="img-fluid" />
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="./img/2.png" />
+                                    <img src="./img/2.png" style="width: 100%;"/>
                                 </swiper-slide>
                               </swiper-container>
                             
@@ -160,6 +176,14 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
     <script >
+
+
+        setTimeout(function(){ 
+            
+            const el = document.querySelector('#first_flip');
+            el.classList.remove("hidden");
+
+         }, 1000);
   
     </script>
 </body>
